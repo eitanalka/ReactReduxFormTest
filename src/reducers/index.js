@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
+import PostsReducer from './reducer_posts';
 import { combineForms } from 'react-redux-form';
 
 const rootReducer = combineReducers({
-  deep: combineForms({
-    user: { firstName: '', lastName: ''}
-  }, 'deep')
+  posts: PostsReducer,
+  form: combineForms({
+    form: { title: '', categories: '', content: ''}
+  }, 'form')
 });
 
 export default rootReducer;
